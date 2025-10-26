@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -31,4 +32,5 @@ Route::get('/about', function () {
 Route::prefix('admin')->group(function(){
     Route::get('/school', [SchoolController::class, 'edit'])->name('school.edit');
     Route::post('/school', [SchoolController::class, 'update'])->name('school.update');
+    Route::resource('/teachers', TeacherController::class);
 });

@@ -50,21 +50,30 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
 
-        <!-- Nav Item - School -->
+            <!-- Nav Item - School -->
         <li class="nav-item {{ Nav::isRoute('school.edit') }}">
             <a class="nav-link" href="{{ route('school.edit') }}">
-                <i class="fas fa-fw fa-hands-helping"></i>
+                <i class="fas fa-fw fa-school"></i>
                 <span>Data Sekolah</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Teacher -->
+        <li class="nav-item {{ Nav::isRoute('teachers.index') }}">
+            <a class="nav-link" href="{{ route('teachers.index') }}">
+                <i class="fas fa-fw fa-chalkboard-teacher"></i>
+                <span>Data Guru</span>
             </a>
         </li>
 
         <!-- Nav Item - About -->
         <li class="nav-item {{ Nav::isRoute('about') }}">
             <a class="nav-link" href="{{ route('about') }}">
-                <i class="fas fa-fw fa-hands-helping"></i>
-                <span>{{ __('About') }}</span>
+                <i class="fas fa-fw fa-info-circle"></i>
+                <span>Tentang</span>
             </a>
         </li>
+
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
