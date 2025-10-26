@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SchoolController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,8 @@ Route::put('/profile', 'ProfileController@update')->name('profile.update');
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+Route::prefix('admin')->group(function(){
+    Route::get('/school', [SchoolController::class, 'edit'])->name('school.edit');
+    Route::post('/school', [SchoolController::class, 'update'])->name('school.update');
+});

@@ -50,6 +50,13 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
 
+        <!-- Nav Item - School -->
+        <li class="nav-item {{ Nav::isRoute('school.edit') }}">
+            <a class="nav-link" href="{{ route('school.edit') }}">
+                <i class="fas fa-fw fa-hands-helping"></i>
+                <span>Data Sekolah</span>
+            </a>
+        </li>
 
         <!-- Nav Item - About -->
         <li class="nav-item {{ Nav::isRoute('about') }}">
