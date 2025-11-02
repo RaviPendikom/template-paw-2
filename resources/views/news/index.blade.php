@@ -48,6 +48,9 @@
                 <td>{{ $item->date ? \Carbon\Carbon::parse($item->date)->format('d/m/Y') : '—' }}</td>
                 <td>{{ $item->author ?? '—' }}</td>
                 <td>
+                   <a href="{{ route('news.show', $item) }}" class="btn btn-sm btn-info">
+                      <i class="fas fa-eye"></i>
+                    </a>
                   <a href="{{ route('news.edit', $item) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
                   <form action="{{ route('news.destroy', $item) }}" method="POST" class="d-inline"
                         onsubmit="return confirm('Hapus berita ini?');">
