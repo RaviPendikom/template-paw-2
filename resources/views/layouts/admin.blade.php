@@ -21,6 +21,7 @@
 
     <!-- Favicon -->
     <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png">
+    @stack('styles')
 </head>
 <body id="page-top">
 
@@ -74,6 +75,14 @@
             </a>
         </li>
         
+
+        <li class="nav-item {{ Nav::isRoute('news.*') }}">
+            <a class="nav-link" href="{{ route('news.index') }}">
+                <i class="fas fa-fw fa-newspaper"></i>
+                <span>Berita</span>
+            </a>
+        </li>
+
         <!-- Nav Item - About -->
         <li class="nav-item {{ Nav::isRoute('about') }}">
             <a class="nav-link" href="{{ route('about') }}">
@@ -191,7 +200,7 @@
         </div>
     </div>
 </div>
-
+  @stack('scripts')
 <!-- Scripts -->
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>

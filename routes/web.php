@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExtracurricularController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\TeacherController;
 use App\Models\Extracurricular;
@@ -36,5 +37,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('/school', [SchoolController::class, 'update'])->name('school.update');
 
     Route::resource('/teachers', TeacherController::class);
-    Route::resource('/extracurriculars', ExtracurricularController::class); // <- controller, bukan model
+    Route::resource('/extracurriculars', ExtracurricularController::class);
+    Route::resource('/news', NewsController::class); 
 });

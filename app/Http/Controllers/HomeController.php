@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Extracurricular;
+use App\Models\News;
+use App\Models\Teacher;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -24,11 +27,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::count();
+        $users            = User::count();
+        $teachers           = Teacher::count();
+        $extracurriculars   = Extracurricular::count();
+        $news               = News::count();
 
         $widget = [
-            'users' => $users,
-            //...
+            'users'            => $users,
+            'teachers'         => $teachers,
+            'extracurriculars' => $extracurriculars,
+            'news'             => $news,
         ];
 
         return view('home', compact('widget'));
