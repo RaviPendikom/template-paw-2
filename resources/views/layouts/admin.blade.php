@@ -66,6 +66,14 @@
             </a>
         </li>
 
+        <!-- Nav Item - Extracurriculars -->
+        <li class="nav-item {{ Nav::isRoute('extracurriculars.*') }}">
+            <a class="nav-link" href="{{ route('extracurriculars.index') }}">
+                <i class="fas fa-fw fa-basketball-ball"></i>
+                <span>Ekstrakurikuler</span>
+            </a>
+        </li>
+        
         <!-- Nav Item - About -->
         <li class="nav-item {{ Nav::isRoute('about') }}">
             <a class="nav-link" href="{{ route('about') }}">
