@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExtracurricularController;
+use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\TeacherController;
@@ -19,7 +20,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('', '/home');
+Route::get('/',                [PageController::class, 'home'])->name('front.home');
+Route::get('/profil-sekolah',  [PageController::class, 'school'])->name('front.school');
+Route::get('/guru',            [PageController::class, 'teachers'])->name('front.teachers');
+Route::get('/ekstrakurikuler', [PageController::class, 'extracurriculars'])->name('front.extracurriculars');
+Route::get('/berita',          [PageController::class, 'newsIndex'])->name('front.news.index');
+Route::get('/berita/{news}',   [PageController::class, 'newsShow'])->name('front.news.show');
 
 Auth::routes();
 
